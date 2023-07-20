@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit,ElementRef, Input, ViewEncapsulation, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -11,7 +11,7 @@ export class ServerElementComponent implements OnInit {
 @Input('srvElement')  element: {type: string, name: string, content:string};
 // The @Input is a decorator and it exposes an element so that child components have access to it. It exposes properties because by default TypeScript doesnt do that
 //In the brackets, you can pass a string that will be the alias for the property you want to expose
-
+ @ViewChild('header', {static: true}) header: ElementRef;
 //@Input makes properties bindable from outside
   constructor() { }
 

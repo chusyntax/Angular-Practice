@@ -8,7 +8,14 @@
       <app-server-element 
       *ngFor="let serverElement of serverElements"
       [srvElement]="serverElement"
-      ></app-server-element>
+      >
+      <p>
+        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+        <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+      </p>    
+
+      <!-- Anything you place betweeen the opening and closing tag of your component is lost/removed fromthe DOM by default -->
+    </app-server-element>
       <!-- NB! Remeber that Angular forces style encapsulation (Almost like a shadow DOM -->
     </div>
   </div>

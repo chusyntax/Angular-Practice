@@ -8,7 +8,10 @@
       #serverNameInput>
       <!-- "#" is used as a local reference that can be used anywhere in the template. Can also be used to passs data to our TypeScript code -->
       <label>Server Content</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+      <input type="text" 
+      class="form-control" 
+      #serverContentInput>
       <br>
       <button
         class="btn btn-primary"
