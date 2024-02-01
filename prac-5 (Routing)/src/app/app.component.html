@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+
+        <!-- Instead of using href, we use RouterLink so that Angular does not refresh tha page and just re-routes -->
+
+        <!-- [routerLinkActiveOptions] is used so that the exact route is loaded -->
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
+
+        <!-- This notation (protperty binding)-'[]' allows you to setup more complex paths -->
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['/users']">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- For routes to work, have one place where you want to render your routes then you add your component with a special directive which is router-outlet-->
+     <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

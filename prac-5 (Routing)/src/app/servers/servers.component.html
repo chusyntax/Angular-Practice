@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <!-- [queryParams] is used to add optional route paramters to links in this case, a question mark-->
+
+     <!-- fragment will add a fragment (something beginning with hashtag)-->
+      <a
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{allowEdit: '1'}"
+        fragment="loading"
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <button class="btn btn-primary" (click)="onReload()">Relative Routing</button>
+    <app-edit-server></app-edit-server>
+    <hr>
+    <!-- <app-server></app-server> -->
+  </div>
+</div>
+
