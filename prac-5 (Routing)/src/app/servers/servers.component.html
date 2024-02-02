@@ -6,7 +6,7 @@
      <!-- fragment will add a fragment (something beginning with hashtag)-->
       <a
         [routerLink]="['/servers', server.id]"
-        [queryParams]="{allowEdit: '1'}"
+        [queryParams]="{allowEdit: server.id === 3 ? '1': '0'}"
         fragment="loading"
         href="#"
         class="list-group-item"
@@ -16,9 +16,11 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <button class="btn btn-primary" (click)="onReload()">Relative Routing</button>
+    <router-outlet></router-outlet>
+
+    <!-- <button class="btn btn-primary" (click)="onReload()">Relative Routing</button>
     <app-edit-server></app-edit-server>
-    <hr>
+    <hr> -->
     <!-- <app-server></app-server> -->
   </div>
 </div>

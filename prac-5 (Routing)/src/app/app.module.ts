@@ -11,22 +11,8 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
-import { RouterModule, Routes } from '@angular/router';
-
-const appRoutes: Routes = [
-  //Array of app routes
-  //First item of object is the name of the routes(What will appear in the search bar) 
-  //Second item is the action
-  {path: '', component: HomeComponent},
-  //The colon ':' tells Angular that this is the dynamic part of the route
-  {path: 'users', component: UsersComponent},
-    //The colon ':' tells Angular that this is the dynamic part of the route
-  {path: 'users/:id/:name', component: UserComponent},
-  {path: 'servers', component: ServersComponent},
-  {path: 'servers/:id', component: ServerComponent},
-  {path: 'servers/:id/edit', component: EditServerComponent}
-
-]
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -36,14 +22,16 @@ const appRoutes: Routes = [
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule
     //The .forRoot() function allows us to register routes for our app
     //Takes in the appRoutes array
-    RouterModule.forRoot(appRoutes)
+    //RouterModule.forRoot(appRoutes)
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
